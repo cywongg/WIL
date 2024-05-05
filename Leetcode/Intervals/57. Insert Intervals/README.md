@@ -6,6 +6,9 @@
 > - Choose a “happy path” test input, different than the one provided, and a few edge case inputs.
 > - Verify that you and the interviewer are aligned on the expected inputs and outputs.
 
+- In an new output array perspective, you either, 1. just add original, 2. add new then original, 3. just merge it to update the new interval for it to be added later
+- Why just updating new interval will work? 
+
 ### Match
 > - See if this problem matches a problem category (e.g. Strings/Arrays) and strategies or patterns within the category
 
@@ -26,12 +29,12 @@ General Idea:
 ### Review
 > - Re-check that your algorithm solves the problem by running through important examples
 > - Go through it as if you are debugging it, assuming there is a bug
-> - Key points of putting (newInterval == null || newInterval[0] > interval[1]) first
+- Key points of putting (newInterval == null || newInterval[0] > interval[1]) first
 Now, let's consider what happens if we reverse the order of these conditions:
 
-If we place interval[0] > newInterval[1] before (newInterval == null || newInterval[0] > interval[1]), the code will first check if the current interval comes after the new interval.
+1. If we place interval[0] > newInterval[1] before (newInterval == null || newInterval[0] > interval[1]), the code will first check if the current interval comes after the new interval.
 
-Now, imagine the new interval is set to null. This means the condition (newInterval == null || newInterval[0] > interval[1]) will be true for every iteration. But since we are checking interval[0] > newInterval[1] first, it will throw a null pointer exception because newInterval is null, and we are trying to access newInterval[1].
+2. Now, imagine the new interval is set to null. This means the condition (newInterval == null || newInterval[0] > interval[1]) will be true for every iteration. But since we are checking interval[0] > newInterval[1] first, it will throw a null pointer exception because newInterval is null, and we are trying to access newInterval[1].
 
 So, the order of conditions is important to ensure that the code handles all cases correctly and avoids null pointer exceptions. By checking (newInterval == null || newInterval[0] > interval[1]) first, we ensure that the null check is performed before accessing the elements of newInterval.
   
