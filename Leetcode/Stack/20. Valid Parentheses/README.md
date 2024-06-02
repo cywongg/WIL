@@ -31,7 +31,7 @@ What are the different cases?
 3. at the end:
    1. if stack is empty (all matched) -> valid
 
-> - How can you optimise this solution? 
+- How can you optimise this solution? 
     - Can keep a hashmap to improve readability
     - can make use of containsKey & get 
 
