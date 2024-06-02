@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        Map<Character, Character> lookUp = new HashMap<>();
+        lookUp.put('}', '{');
+        lookUp.put(')', '(');
+        lookUp.put(']', '[');
+
+        if (s.length() %2 != 0) return false;
+        for (int i = 0; i <s.length(); i++){
+            if (stack.isEmpty() && lookUp.containsKey(s.charAt(i)))  {
+                return false;
+            } else if (lookUp.containsKey(s.charAt(i)) && stack.peek() == lookUp.get(s.charAt(i))) {
+                stack.pop();
+            } else {
+                stack.add(s.charAt(i));
+            }
+        }
+        return stack.isEmpty();
+    }
+}
