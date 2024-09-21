@@ -11,7 +11,7 @@
 
 ### Match
 > - See if this problem matches a problem category (e.g. Strings/Arrays) and strategies or patterns within the category
-<img width="153" alt="image" src="https://github.com/user-attachments/assets/e0a33475-d082-423d-ace4-10cf9ed71665">
+
 
 
 
